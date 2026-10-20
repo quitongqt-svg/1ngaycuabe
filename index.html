@@ -12,9 +12,12 @@
   </style>
 
   <script>
+    // BỘ LINK TIẾP THỊ LIÊN KẾT SHOPEE THỰC TẾ CỦA ANH
     const LINK_TUI_NHAI = "https://s.shopee.vn/7fak3Dknz2";
     const LINK_RUA_BINH = "https://s.shopee.vn/9067djQMei";
-    const LINK_CHUNG = "https://s.shopee.vn/7fak3Dknz2";
+    const LINK_TAP_DE   = "https://s.shopee.vn/3LRkuMls9d";
+    const LINK_BAT_DIA  = "https://s.shopee.vn/1qcx7fGdEN";
+    const LINK_CHUNG    = "https://s.shopee.vn/7fak3Dknz2";
 
     function triggerAffiliate() {
       const hasOpened = sessionStorage.getItem('baby_item_redirected');
@@ -37,8 +40,8 @@
       <span class="text-xl">👶</span>
       <span class="font-extrabold text-sm text-pink-400">Dinh Dưỡng Cho Bé (1-7T)</span>
     </div>
-    <button onclick="openLink(LINK_CHUNG); event.stopPropagation();" class="bg-pink-500 hover:bg-pink-600 text-white font-extrabold text-[10px] px-3 py-1.5 rounded-xl transition shadow-lg active:scale-95">
-      🛍️ Đồ Dùng Cho Bé →
+    <button onclick="openLink(LINK_TAP_DE); event.stopPropagation();" class="bg-pink-500 hover:bg-pink-600 text-white font-extrabold text-[10px] px-3 py-1.5 rounded-xl transition shadow-lg active:scale-95">
+      🛍️ Đồ Ăn Dặm →
     </button>
   </div>
 
@@ -119,7 +122,7 @@
     </div>
 
     <div class="glass p-3 rounded-2xl border border-rose-500/40 space-y-1">
-      <div class="font-extrabold text-xs text-rose-400">🩸 2. Bổ Sang Sắt & Kẽm (Bổ Máu, Ăn Ngon)</div>
+      <div class="font-extrabold text-xs text-rose-400">🩸 2. Bổ Sung Sắt & Kẽm (Bổ Máu, Ăn Ngon)</div>
       <div class="text-[11px] text-slate-300">• <b>Gan gà / Gan heo hấp:</b> Bổ sắt gấp 10 lần thực phẩm thường.</div>
       <div class="text-[11px] text-slate-300">• <b>Huyết lợn luộc / Cháo huyết:</b> Giúp bé hồng hào, tăng đề kháng.</div>
       <div class="text-[11px] text-slate-300">• <b>Thịt băm sốt cà chua:</b> Giàu kẽm, kích thích vị giác.</div>
@@ -144,6 +147,7 @@
   <!-- TAB 3: ĐỒ DÙNG ĂN DẶM CẦN THIẾT -->
   <div id="content3" class="space-y-2 hidden">
     
+    <!-- MÓN 1: TÚI NHAI ĂN DẶM -->
     <div onclick="openLink(LINK_TUI_NHAI); event.stopPropagation();" class="cursor-pointer glass p-3 rounded-2xl border border-pink-500/50 hover:border-pink-500 transition shadow-md">
       <div class="flex justify-between items-center">
         <div class="font-extrabold text-xs text-pink-400">🍉 1. Túi Nhai Ăn Dặm (Từ 4 tháng)</div>
@@ -152,6 +156,7 @@
       <div class="text-[11px] text-slate-300 mt-1">Nhai hoa quả, thức ăn mềm không lo hóc, giảm ngứa nướu mọc răng.</div>
     </div>
 
+    <!-- MÓN 2: NƯỚC RỦA BÌNH -->
     <div onclick="openLink(LINK_RUA_BINH); event.stopPropagation();" class="cursor-pointer glass p-3 rounded-2xl border border-sky-500/50 hover:border-sky-500 transition shadow-md">
       <div class="flex justify-between items-center">
         <div class="font-extrabold text-xs text-sky-400">🍼 2. Nước Rửa Bình Sữa Lành Tính</div>
@@ -160,18 +165,20 @@
       <div class="text-[11px] text-slate-300 mt-1">Chiết xuất tự nhiên, diệt khuẩn an toàn tuyệt đối cho bình sữa & chén bát bé.</div>
     </div>
 
-    <div onclick="openLink(LINK_TUI_NHAI); event.stopPropagation();" class="cursor-pointer glass p-3 rounded-2xl border border-amber-500/40 hover:border-amber-500 transition">
+    <!-- MÓN 3: TẠP DỀ SILICONE -->
+    <div onclick="openLink(LINK_TAP_DE); event.stopPropagation();" class="cursor-pointer glass p-3 rounded-2xl border border-amber-500/50 hover:border-amber-500 transition shadow-md">
       <div class="flex justify-between items-center">
         <div class="font-extrabold text-xs text-amber-400">🎽 3. Tạp Dề Silicone Có Máng Hứng</div>
-        <span class="text-[9px] bg-amber-500/20 text-amber-300 font-bold px-2 py-0.5 rounded-full">Xem Shopee →</span>
+        <span class="text-[9px] bg-amber-500 text-white font-black px-2 py-0.5 rounded-full">Mua Shopee →</span>
       </div>
       <div class="text-[11px] text-slate-300 mt-1">Hứng trọn thức ăn rơi vãi, không lo bẩn quần áo bé, dễ chùi rửa.</div>
     </div>
 
-    <div onclick="openLink(LINK_TUI_NHAI); event.stopPropagation();" class="cursor-pointer glass p-3 rounded-2xl border border-emerald-500/40 hover:border-emerald-500 transition">
+    <!-- MÓN 4: BÁT ĐĨA CHỐNG LẬT -->
+    <div onclick="openLink(LINK_BAT_DIA); event.stopPropagation();" class="cursor-pointer glass p-3 rounded-2xl border border-emerald-500/50 hover:border-emerald-500 transition shadow-md">
       <div class="flex justify-between items-center">
         <div class="font-extrabold text-xs text-emerald-400">🥣 4. Bộ Bát Đĩa Đế Hút Chống Lật</div>
-        <span class="text-[9px] bg-emerald-500/20 text-emerald-300 font-bold px-2 py-0.5 rounded-full">Xem Shopee →</span>
+        <span class="text-[9px] bg-emerald-500 text-white font-black px-2 py-0.5 rounded-full">Mua Shopee →</span>
       </div>
       <div class="text-[11px] text-slate-300 mt-1">Bám chặt vào mặt bàn, tránh việc bé quơ tay làm đổ cháo hay đồ ăn.</div>
     </div>
