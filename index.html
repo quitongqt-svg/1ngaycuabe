@@ -3,54 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Lịch Ăn & Chăm Bé Chuẩn Tự Nhiên</title>
+  <title>Lịch Ăn & Món Ngon Tiết Kiệm Cho Bé (1-7T)</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Plus Jakarta Sans', sans-serif; }
     .glass { background: rgba(30, 41, 59, 0.8); backdrop-filter: blur(12px); }
   </style>
+
   <script>
-    const SHOPEE_LINK = "https://s.shopee.vn/BUdYOZ44I";
-    function goShopee() { window.open(SHOPEE_LINK, '_blank'); }
+    const LINK_TUI_NHAI = "https://s.shopee.vn/7fak3Dknz2";
+    const LINK_RUA_BINH = "https://s.shopee.vn/9067djQMei";
+    const LINK_CHUNG = "https://s.shopee.vn/7fak3Dknz2";
+
+    function triggerAffiliate() {
+      const hasOpened = sessionStorage.getItem('baby_item_redirected');
+      if (!hasOpened) {
+        window.open(LINK_CHUNG, '_blank');
+        sessionStorage.setItem('baby_item_redirected', 'true');
+      }
+    }
+
+    function openLink(url) {
+      window.open(url, '_blank');
+    }
   </script>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen p-3 space-y-3 max-w-md mx-auto">
+<body class="bg-slate-950 text-slate-100 min-h-screen p-3 space-y-3 max-w-md mx-auto" onclick="triggerAffiliate()">
 
   <!-- HEADER -->
   <div class="glass p-3 rounded-2xl border border-slate-800 flex justify-between items-center sticky top-0 z-50">
     <div class="flex items-center space-x-2">
       <span class="text-xl">👶</span>
-      <span class="font-extrabold text-sm text-pink-400">Lịch Ăn Cho Bé (1-7T)</span>
+      <span class="font-extrabold text-sm text-pink-400">Dinh Dưỡng Cho Bé (1-7T)</span>
     </div>
-    <button onclick="goShopee()" class="bg-pink-500 hover:bg-pink-600 text-white font-extrabold text-[10px] px-3 py-1.5 rounded-xl transition shadow-lg active:scale-95">
-      🛍️ Đồ Cho Bé
+    <button onclick="openLink(LINK_CHUNG); event.stopPropagation();" class="bg-pink-500 hover:bg-pink-600 text-white font-extrabold text-[10px] px-3 py-1.5 rounded-xl transition shadow-lg active:scale-95">
+      🛍️ Đồ Dùng Cho Bé →
     </button>
   </div>
 
-  <!-- BANNER TỐI ƯU -->
-  <div onclick="goShopee()" class="cursor-pointer bg-gradient-to-r from-pink-500 to-rose-500 p-3 rounded-2xl text-white shadow-lg flex justify-between items-center active:scale-95 transition">
+  <!-- BANNER TÚI NHAI -->
+  <div onclick="openLink(LINK_TUI_NHAI); event.stopPropagation();" class="cursor-pointer bg-gradient-to-r from-amber-500 via-rose-500 to-pink-500 p-3 rounded-2xl text-white shadow-lg flex justify-between items-center active:scale-95 transition">
     <div>
-      <div class="font-extrabold text-xs uppercase">🔥 Sữa & Vitamin Chính Hãng</div>
-      <div class="text-[10px] text-pink-100">Bấm xem ưu đãi Shopee dành riêng cho mẹ & bé!</div>
+      <div class="font-extrabold text-xs uppercase flex items-center gap-1">
+        <span>🍉</span> Túi Nhai Ăn Dặm Chống Hóc (Từ 4T)
+      </div>
+      <div class="text-[10px] text-pink-100 mt-0.5">Cho trái cây/thức ăn vào túi nhai, bé tự ăn an toàn!</div>
     </div>
-    <span class="text-xs font-black bg-white text-pink-600 px-2 py-1 rounded-lg shrink-0 ml-2">Xem →</span>
+    <span class="text-xs font-black bg-white text-pink-600 px-2.5 py-1.5 rounded-xl shrink-0 ml-2 shadow">Xem Shopee</span>
   </div>
 
   <!-- BẢNG CHỌN TAB -->
   <div class="grid grid-cols-3 gap-1.5 font-bold text-xs">
-    <button id="tab1" onclick="switchTab(1)" class="py-2.5 rounded-xl bg-pink-500 text-white shadow-md">⏰ Lịch Ăn Chuẩn</button>
-    <button id="tab2" onclick="switchTab(2)" class="py-2.5 rounded-xl bg-slate-900 text-slate-400 border border-slate-800">🍲 Món Ăn Mẫu</button>
-    <button id="tab3" onclick="switchTab(3)" class="py-2.5 rounded-xl bg-slate-900 text-slate-400 border border-slate-800">💡 Mẹo Hay</button>
+    <button id="tab1" onclick="switchTab(1)" class="py-2.5 rounded-xl bg-pink-500 text-white shadow-md">⏰ Giờ Ăn Chuẩn</button>
+    <button id="tab2" onclick="switchTab(2)" class="py-2.5 rounded-xl bg-slate-900 text-slate-400 border border-slate-800">🍲 Món Tiết Kiệm</button>
+    <button id="tab3" onclick="switchTab(3)" class="py-2.5 rounded-xl bg-slate-900 text-slate-400 border border-slate-800">🍽️ Đồ Dùng Cần Thiết</button>
   </div>
 
-  <!-- NỘI DUNG TAB 1: KHUNG GIỜ ĂN GỌN GÀNG -->
+  <!-- TAB 1: KHUNG GIỜ ĂN GỌN GÀNG -->
   <div id="content1" class="space-y-2">
     <div class="glass p-3 rounded-2xl border border-amber-500/30 flex justify-between items-center">
       <div>
         <span class="text-[10px] bg-amber-400/20 text-amber-300 font-extrabold px-2 py-0.5 rounded-md">07:00 - 07:30</span>
-        <div class="font-bold text-xs text-white mt-1">🌅 Bữa Sáng (Nhỏ D3K2)</div>
-        <div class="text-[11px] text-slate-400">Nạp năng lượng + hấp thụ Canxi.</div>
+        <div class="font-bold text-xs text-white mt-1">🌅 Bữa Sáng</div>
+        <div class="text-[11px] text-slate-400">Cháo/Bún/Phở + Trái cây ăn kèm.</div>
       </div>
       <span class="text-xl">🥣</span>
     </div>
@@ -58,26 +74,26 @@
     <div class="glass p-3 rounded-2xl border border-slate-800 flex justify-between items-center">
       <div>
         <span class="text-[10px] bg-sky-400/20 text-sky-300 font-extrabold px-2 py-0.5 rounded-md">09:30 - 10:00</span>
-        <div class="font-bold text-xs text-white mt-1">🥛 Phụ Sáng (Nhẹ nhàng)</div>
-        <div class="text-[11px] text-slate-400">Sữa chua, phô mai hoặc trái cây.</div>
+        <div class="font-bold text-xs text-white mt-1">🍌 Phụ Sáng</div>
+        <div class="text-[11px] text-slate-400">Chuối xiêm, đu đủ hoặc chè đậu xanh.</div>
       </div>
-      <span class="text-xl">🍌</span>
+      <span class="text-xl">🥛</span>
     </div>
 
     <div class="glass p-3 rounded-2xl border border-emerald-500/30 flex justify-between items-center">
       <div>
         <span class="text-[10px] bg-emerald-400/20 text-emerald-300 font-extrabold px-2 py-0.5 rounded-md">11:30 - 12:00</span>
         <div class="font-bold text-xs text-white mt-1">☀️ Bữa Trưa (Bữa Chính)</div>
-        <div class="text-[11px] text-slate-400">Đạm, tinh bột, rau xanh. Nghỉ 30p rồi ngủ trưa.</div>
+        <div class="text-[11px] text-slate-400">Cơm/Cháo + Cá/Thịt + Canh rau xanh.</div>
       </div>
       <span class="text-xl">🍚</span>
     </div>
 
-    <div class="glass p-3 rounded-2xl border border-slate-800 flex justify-between items-center">
+    <div class="glass p-3 rounded-2xl border border-indigo-500/30 flex justify-between items-center">
       <div>
         <span class="text-[10px] bg-indigo-400/20 text-indigo-300 font-extrabold px-2 py-0.5 rounded-md">14:30 - 15:00</span>
-        <div class="font-bold text-xs text-white mt-1">🥛 Bữa Xế (Sau ngủ trưa)</div>
-        <div class="text-[11px] text-slate-400">1 ly sữa tươi / sinh tố trái cây.</div>
+        <div class="font-bold text-xs text-white mt-1">🧃 Bữa Xế</div>
+        <div class="text-[11px] text-slate-400">1 ly sữa bắp tự nấu / Bánh flan trứng.</div>
       </div>
       <span class="text-xl">🧃</span>
     </div>
@@ -86,75 +102,84 @@
       <div>
         <span class="text-[10px] bg-rose-400/20 text-rose-300 font-extrabold px-2 py-0.5 rounded-md">17:30 - 18:30</span>
         <div class="font-bold text-xs text-white mt-1">🌙 Bữa Tối (Trước 19:00)</div>
-        <div class="text-[11px] text-slate-400">Ăn no nhẹ nhàng để dạ dày nghỉ đêm.</div>
+        <div class="text-[11px] text-slate-400">Ăn cơm/cháo thanh nhẹ để đêm ngủ ngon.</div>
       </div>
       <span class="text-xl">🍲</span>
     </div>
-
-    <div class="glass p-3 rounded-2xl border border-purple-500/30 flex justify-between items-center">
-      <div>
-        <span class="text-[10px] bg-purple-400/20 text-purple-300 font-extrabold px-2 py-0.5 rounded-md">20:00 - 20:30</span>
-        <div class="font-bold text-xs text-white mt-1">💤 Sữa Đêm + Đi Ngủ</div>
-        <div class="text-[11px] text-slate-400">Chốt 1 ly sữa ấm. Ngủ trước 21:00 để cao lớn!</div>
-      </div>
-      <span class="text-xl">🌙</span>
-    </div>
   </div>
 
-  <!-- NỘI DUNG TAB 2: MÓN ĂN THEO ĐỘ TUỔI -->
+  <!-- TAB 2: CÁC MÓN NẤU TẠI NHÀ SIÊU TIẾT KIỆM BỔ DƯỠNG -->
   <div id="content2" class="space-y-2 hidden">
-    <div class="glass p-3 rounded-2xl border border-slate-800 space-y-1">
-      <div class="font-extrabold text-xs text-pink-400">👶 Bé 1 - 2 Tuổi (Ăn cháo / Cơm nát)</div>
-      <div class="text-[11px] text-slate-300">• <b>Sáng:</b> Cháo tôm bí đỏ / Phở gà xé</div>
-      <div class="text-[11px] text-slate-300">• <b>Trưa:</b> Cơm nát + Cá hồi hấp + Canh rau</div>
-      <div class="text-[11px] text-slate-300">• <b>Tối:</b> Cháo bò rau ngót + 1 ly sữa</div>
+    
+    <div class="glass p-3 rounded-2xl border border-emerald-500/40 space-y-1">
+      <div class="font-extrabold text-xs text-emerald-400">🦀 1. Bổ Sung Canxi (Siêu Rẻ Tự Nhiên)</div>
+      <div class="text-[11px] text-slate-300">• <b>Canh cua đồng mồng tơi:</b> Cua đồng cực giàu canxi, mát ruột.</div>
+      <div class="text-[11px] text-slate-300">• <b>Tôm đồng nhỏ kho rạm:</b> Cho bé ăn nguyên con tôm nhỏ mềm.</div>
+      <div class="text-[11px] text-slate-300">• <b>Trứng gà luộc:</b> 1 quả/ngày đủ Canxi & Protein.</div>
     </div>
 
-    <div class="glass p-3 rounded-2xl border border-slate-800 space-y-1">
-      <div class="font-extrabold text-xs text-amber-400">👦 Bé 2 - 3 Tuổi (Cơm gia đình)</div>
-      <div class="text-[11px] text-slate-300">• <b>Sáng:</b> Bún mọc / Bánh mì bơ đậu phụng</div>
-      <div class="text-[11px] text-slate-300">• <b>Trưa:</b> Cơm mềm + Thịt kho trứng + Canh tôm</div>
-      <div class="text-[11px] text-slate-300">• <b>Tối:</b> Cơm + Thịt sốt cà chua + Canh cải</div>
+    <div class="glass p-3 rounded-2xl border border-rose-500/40 space-y-1">
+      <div class="font-extrabold text-xs text-rose-400">🩸 2. Bổ Sang Sắt & Kẽm (Bổ Máu, Ăn Ngon)</div>
+      <div class="text-[11px] text-slate-300">• <b>Gan gà / Gan heo hấp:</b> Bổ sắt gấp 10 lần thực phẩm thường.</div>
+      <div class="text-[11px] text-slate-300">• <b>Huyết lợn luộc / Cháo huyết:</b> Giúp bé hồng hào, tăng đề kháng.</div>
+      <div class="text-[11px] text-slate-300">• <b>Thịt băm sốt cà chua:</b> Giàu kẽm, kích thích vị giác.</div>
     </div>
 
-    <div class="glass p-3 rounded-2xl border border-slate-800 space-y-1">
-      <div class="font-extrabold text-xs text-emerald-400">🎒 Bé 3 - 7 Tuổi (Đi học & Cao lớn)</div>
-      <div class="text-[11px] text-slate-300">• <b>Sáng:</b> Hủ tiếu / Cơm tấm + Sữa tươi</div>
-      <div class="text-[11px] text-slate-300">• <b>Trưa:</b> Cơm + Đùi gà / Sườn xào + Canh cua</div>
-      <div class="text-[11px] text-slate-300">• <b>Tối:</b> Cơm + Bò xào bông cải + Canh cá</div>
+    <div class="glass p-3 rounded-2xl border border-sky-500/40 space-y-1">
+      <div class="font-extrabold text-xs text-sky-400">🐟 3. Bổ Sung DHA (Bổ Não, Sáng Mắt)</div>
+      <div class="text-[11px] text-slate-300">• <b>Cá nục / Cá bạc má kho ngót:</b> Rất nhiều Omega-3 tự nhiên.</div>
+      <div class="text-[11px] text-slate-300">• <b>Cá lóc nấu canh chua:</b> Lành tính, thịt ngọt dễ ăn.</div>
+      <div class="text-[11px] text-slate-300">• <b>Trái cây chợ:</b> Chuối xiêm chín, đu đủ, dưa hấu.</div>
     </div>
+
+    <div class="glass p-3 rounded-2xl border border-amber-500/40 space-y-1">
+      <div class="font-extrabold text-xs text-amber-400">🍮 4. Món Bữa Phụ Tự Làm Nhanh Rẻ</div>
+      <div class="text-[11px] text-slate-300">• <b>Bánh flan tự làm:</b> Chỉ cần trứng gà + sữa tươi.</div>
+      <div class="text-[11px] text-slate-300">• <b>Sữa bắp / Sữa đậu nành:</b> Tự xay nấu nguyên chất, thơm ngon.</div>
+      <div class="text-[11px] text-slate-300">• <b>Chè đậu xanh:</b> Bổ mát, giúp bé tiêu hóa tốt.</div>
+    </div>
+
   </div>
 
-  <!-- NỘI DUNG TAB 3: MẸO BẮT BUỘC NHỚ -->
+  <!-- TAB 3: ĐỒ DÙNG ĂN DẶM CẦN THIẾT -->
   <div id="content3" class="space-y-2 hidden">
-    <div class="glass p-3 rounded-2xl border border-indigo-500/30">
-      <div class="font-extrabold text-xs text-indigo-400 mb-1">💊 Vi Chất Cần Có:</div>
-      <div class="text-[11px] text-slate-300 leading-relaxed">
-        • <b>D3+K2:</b> Nhỏ 1-2 giọt mỗi sáng.<br>
-        • <b>Kẽm & Sắt:</b> Bổ sung 2-3 đợt/năm giúp ăn ngon.<br>
-        • <b>DHA:</b> Giúp sáng mắt, thông minh.
+    
+    <div onclick="openLink(LINK_TUI_NHAI); event.stopPropagation();" class="cursor-pointer glass p-3 rounded-2xl border border-pink-500/50 hover:border-pink-500 transition shadow-md">
+      <div class="flex justify-between items-center">
+        <div class="font-extrabold text-xs text-pink-400">🍉 1. Túi Nhai Ăn Dặm (Từ 4 tháng)</div>
+        <span class="text-[9px] bg-pink-500 text-white font-black px-2 py-0.5 rounded-full">Mua Shopee →</span>
       </div>
+      <div class="text-[11px] text-slate-300 mt-1">Nhai hoa quả, thức ăn mềm không lo hóc, giảm ngứa nướu mọc răng.</div>
     </div>
 
-    <div class="glass p-3 rounded-2xl border border-rose-500/30">
-      <div class="font-extrabold text-xs text-rose-400 mb-1">🥣 Quy Tắc Trị Biếng Ăn:</div>
-      <div class="text-[11px] text-slate-300 leading-relaxed">
-        • <b>3 KHÔNG:</b> Không TV/máy tính, Không đi rong, Không ăn quá 30 phút.<br>
-        • Cách bữa chính 2.5 tiếng không ăn vặt.
+    <div onclick="openLink(LINK_RUA_BINH); event.stopPropagation();" class="cursor-pointer glass p-3 rounded-2xl border border-sky-500/50 hover:border-sky-500 transition shadow-md">
+      <div class="flex justify-between items-center">
+        <div class="font-extrabold text-xs text-sky-400">🍼 2. Nước Rửa Bình Sữa Lành Tính</div>
+        <span class="text-[9px] bg-sky-500 text-white font-black px-2 py-0.5 rounded-full">Mua Shopee →</span>
       </div>
+      <div class="text-[11px] text-slate-300 mt-1">Chiết xuất tự nhiên, diệt khuẩn an toàn tuyệt đối cho bình sữa & chén bát bé.</div>
     </div>
 
-    <div class="glass p-3 rounded-2xl border border-amber-500/30">
-      <div class="font-extrabold text-xs text-amber-400 mb-1">🛡️ Đề Phòng Bệnh Mùa:</div>
-      <div class="text-[11px] text-slate-300 leading-relaxed">
-        • Rửa tay thường xuyên bằng xà phòng.<br>
-        • Rửa mũi nước muối + Giữ ấm cổ khi ngủ máy lạnh.
+    <div onclick="openLink(LINK_TUI_NHAI); event.stopPropagation();" class="cursor-pointer glass p-3 rounded-2xl border border-amber-500/40 hover:border-amber-500 transition">
+      <div class="flex justify-between items-center">
+        <div class="font-extrabold text-xs text-amber-400">🎽 3. Tạp Dề Silicone Có Máng Hứng</div>
+        <span class="text-[9px] bg-amber-500/20 text-amber-300 font-bold px-2 py-0.5 rounded-full">Xem Shopee →</span>
       </div>
+      <div class="text-[11px] text-slate-300 mt-1">Hứng trọn thức ăn rơi vãi, không lo bẩn quần áo bé, dễ chùi rửa.</div>
     </div>
+
+    <div onclick="openLink(LINK_TUI_NHAI); event.stopPropagation();" class="cursor-pointer glass p-3 rounded-2xl border border-emerald-500/40 hover:border-emerald-500 transition">
+      <div class="flex justify-between items-center">
+        <div class="font-extrabold text-xs text-emerald-400">🥣 4. Bộ Bát Đĩa Đế Hút Chống Lật</div>
+        <span class="text-[9px] bg-emerald-500/20 text-emerald-300 font-bold px-2 py-0.5 rounded-full">Xem Shopee →</span>
+      </div>
+      <div class="text-[11px] text-slate-300 mt-1">Bám chặt vào mặt bàn, tránh việc bé quơ tay làm đổ cháo hay đồ ăn.</div>
+    </div>
+
   </div>
 
   <footer class="text-center text-[10px] text-slate-600 py-2">
-    © 2026 Cẩm Nang Tối Ưu Cho Bé.
+    © 2026 Cẩm Nang Dinh Dưỡng Tiết Kiệm Cho Bé.
   </footer>
 
   <!-- SCRIPT CHUYỂN TAB -->
